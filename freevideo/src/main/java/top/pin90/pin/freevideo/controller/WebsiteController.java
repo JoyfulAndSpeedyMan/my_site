@@ -12,12 +12,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
+import top.pin90.pin.freevideo.pojo.Website;
 import top.pin90.pin.freevideo.service.WebsiteService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 
 @RestController
@@ -67,10 +70,26 @@ public class WebsiteController {
         return Result.build(StatusCode.OK,"获取成功",kinds);
     }
 
+//    @PutMapping("/share")
+//    public Result shareWebsite(@NotNull @Size(max = 10)
+//                                           String name,
+//                               @Pattern(regexp = "^(https?):\\/\\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]$")
+//                                       String url,
+//                               @NotNull @Size(max = 10)
+//                                           String kind,
+//                               @Size(max = 50)
+//                                           String detail){
+//
+//        Result result = websiteService.shareWebsite(name, url, kind, detail);
+//
+//        return result;
+//    }
     @PutMapping("/share")
-    public Result shareWebsite(){
-        System.out.println("哈哈");
-        return null;
+    public Result shareWebsite(@Valid Website website){
+        System.out.println(website);
+        Result result;
+        result = websiteService.shareWebsite(website);
+        return result;
     }
 
 }

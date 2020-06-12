@@ -8,4 +8,5 @@ public class StatusCode {
     public static final int REMOTEERROR =15004;//远程调用失败
     public static final int REPERROR =15005;//重复操作
     public static final int ARGUMENTERROR =15006;//参数错误
+    public static final int SERVERERROR =15007;//服务器内部错误
 }

@@ -2,7 +2,7 @@ spring:
   cloud:
     config:
       name: eureka
-      profile: dev
+      profile: product
       label: master
-      uri: http://localhost:12000
+      uri: http://data.pin90.top:12000
 
