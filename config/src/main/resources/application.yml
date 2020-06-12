@@ -19,3 +19,8 @@ management:
     web:
       exposure:
         include: bus-refresh
+logging:
+  level:
+    top.pin90.pin: info
+  file:
+    path: /var/applog

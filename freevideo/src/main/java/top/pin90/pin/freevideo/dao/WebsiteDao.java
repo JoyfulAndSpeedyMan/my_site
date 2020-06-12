@@ -29,7 +29,7 @@ public interface WebsiteDao extends JpaRepository<Website, Long>, JpaSpecificati
                     "       update_time  " +
                     "from website w  " +
                     "where status = 1  " +
-                    "order by w.weight,w.thumbs desc  " +
+                    "order by w.weight desc,w.thumbs desc  " +
                     "limit ?,?",
             nativeQuery = true)
     List<Map<String, Object>> getList(int page, int size);
@@ -52,10 +52,13 @@ public interface WebsiteDao extends JpaRepository<Website, Long>, JpaSpecificati
             "       bit_or(if(w.id = ut.website_id, true, false)) as isThumb " +
             "from website w " +
             "         left join user_thumb ut on ut.user_id = ? " +
+            "where w.status=1 "+
             "group by id " +
-            "order by max(w.weight),max(w.thumbs) desc " +
+            "order by max(w.weight)desc,max(w.thumbs) desc " +
             "limit ?,?;", nativeQuery = true)
     List<Map<String, Object>> getHasThumbList(Long userId, int page, int size);
+
+    List<Website> findByName(String name);
 
 }
 

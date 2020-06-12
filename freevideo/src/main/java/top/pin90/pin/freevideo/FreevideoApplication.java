@@ -7,17 +7,17 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import utils.IdWorker;
-import utils.JwtUtil;
 
 @SpringBootApplication
 @EnableTransactionManagement
 @EnableEurekaClient
 public class FreevideoApplication {
     public static void main(String[] args) {
-        SpringApplication.run(FreevideoApplication.class,args);
+        SpringApplication.run(FreevideoApplication.class, args);
     }
+
     @Bean
-    public IdWorker IdWorker(){
+    public IdWorker IdWorker() {
         return new IdWorker();
     }
 

@@ -10,4 +10,5 @@ public interface WebsiteService {
     Result videoThumb(String token,Long id);
     Result videoUnthumb(String token,Long id);
     Page getKind();
+    Result shareWebsite(Website websiteParam);
 }
