@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://data.pin90.top:3000/pin/pin-config.git
+          username: 905991211@qq.com
+          password: Zsp992033
+  rabbitmq:
+    host: data.pin90.top
+    username: pin
+    password: Zsp992033@
+server:
+  port: 12000
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh

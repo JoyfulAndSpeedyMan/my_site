@@ -1,0 +1,21 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: spit
+  data:
+    mongodb:
+      host: data.pin90.top
+      port: 58498
+      username: pin
+      password: Zsp992033
+      database: spit
+      authentication-database: admin
+
+#eureka:
+#  client:
+#    service-url:
+##      defaultZone: http://data.pin90.top:6868/eureka
+#      defaultZone: http://localhost:6868/eureka
+#  instance:
+#    prefer‐ip‐address: true
