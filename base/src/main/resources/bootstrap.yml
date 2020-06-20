@@ -2,6 +2,6 @@ spring:
   cloud:
     config:
       name: base
-      profile: dev
+      profile: product
       label: master
-      uri: http://127.0.0.1:12000
+      uri: http://data.pin90.top:12000
