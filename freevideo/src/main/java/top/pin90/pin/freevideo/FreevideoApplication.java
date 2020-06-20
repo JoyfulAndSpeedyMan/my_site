@@ -8,6 +8,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import utils.IdWorker;
 
+import javax.annotation.PostConstruct;
+import java.util.TimeZone;
+
 @SpringBootApplication
 @EnableTransactionManagement
 @EnableEurekaClient
@@ -21,4 +24,8 @@ public class FreevideoApplication {
         return new IdWorker();
     }
 
+    @PostConstruct
+    void started() {
+        TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
+    }
 }
